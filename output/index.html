@@ -10359,16 +10359,11 @@ Elm.Main.make = function (_elm) {
       return $Html.text($Basics.toString(_p0));
    },
    A2($Signal.map,
-   function (s) {
-      var _p1 = A2($Random.generate,$Random.bool,s);
-      var b = _p1._0;
-      var ns = _p1._1;
-      return {ctor: "_Tuple2",_0: b,_1: s};
-   },
-   A2($Signal.map,
    function (tmod) {
-      return $Random.initialSeed(tmod);
+      var _p1 = A2($Random.generate,$Random.bool,$Random.initialSeed(tmod));
+      var b = _p1._0;
+      return {ctor: "_Tuple2",_0: b,_1: tmod};
    },
-   A2($Signal.map,function (t) {    return A2($Basics._op["%"],$Basics.round(t),80000);},$Time.every(1)))));
+   A2($Signal.map,function (t) {    return A2($Basics._op["%"],$Basics.round(t),80000);},$Time.every(1))));
    return _elm.Main.values = {_op: _op,main: main};
 };</script></head><body><script type="text/javascript">Elm.fullscreen(Elm.Main)</script></body></html>
